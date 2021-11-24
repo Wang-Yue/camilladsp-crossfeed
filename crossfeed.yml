@@ -1,0 +1,172 @@
+filters:
+  cx1_hi:
+    parameters:
+      freq: 996.51 
+      gain: -0.75
+      type: LowshelfFO
+    type: Biquad
+  cx1_lo:
+    parameters:
+      freq: 650
+      type: LowpassFO
+    type: Biquad
+  cx1_lo_gain:
+    type: Gain
+    parameters:
+      gain: -14.25
+      inverted: false
+
+  cx2_hi:
+    parameters:
+      freq: 899.51 
+      gain: -1.4
+      type: LowshelfFO
+    type: Biquad
+  cx2_lo:
+    parameters:
+      freq: 650
+      type: LowpassFO
+    type: Biquad
+  cx2_lo_gain:
+    type: Gain
+    parameters:
+      gain: -10.92
+      inverted: false
+
+  cx3_hi:
+    parameters:
+      freq: 975.00
+      gain: -2
+      type: LowshelfFO
+    type: Biquad
+  cx3_lo:
+    parameters:
+      freq: 700
+      type: LowpassFO
+    type: Biquad
+  cx3_lo_gain:
+    type: Gain
+    parameters:
+      gain: -8
+      inverted: false
+
+  cx4_hi:
+    parameters:
+      freq: 994.73
+      gain: -2.25
+      type: LowshelfFO
+    type: Biquad
+  cx4_lo:
+    parameters:
+      freq: 700
+      type: LowpassFO
+    type: Biquad
+  cx4_lo_gain:
+    type: Gain
+    parameters:
+      gain: -6.75
+      inverted: false
+
+  cx5_hi:
+    parameters:
+      freq: 1021.17
+      gain: -2.5
+      type: LowshelfFO
+    type: Biquad
+  cx5_lo:
+    parameters:
+      freq: 700
+      type: LowpassFO
+    type: Biquad
+  cx5_lo_gain:
+    type: Gain
+    parameters:
+      gain: -5.5
+      inverted: false
+
+
+mixers:
+  2to4:
+    channels:
+      in: 2
+      out: 4
+    mapping:
+    - dest: 0
+      mute: false
+      sources:
+      - channel: 0
+        gain: 0
+        inverted: false
+        mute: false
+    - dest: 1
+      mute: false
+      sources:
+      - channel: 0
+        gain: 0
+        inverted: false
+        mute: false
+    - dest: 2
+      mute: false
+      sources:
+      - channel: 1
+        gain: 0
+        inverted: false
+        mute: false
+    - dest: 3
+      mute: false
+      sources:
+      - channel: 1
+        gain: 0
+        inverted: false
+        mute: false
+  4to2:
+    channels:
+      in: 4
+      out: 2
+    mapping:
+    - dest: 0
+      mute: false
+      sources:
+      - channel: 0
+        gain: 0
+        inverted: false
+        mute: false
+      - channel: 2
+        gain: 0
+        inverted: false
+        mute: false
+    - dest: 1
+      mute: false
+      sources:
+      - channel: 1
+        gain: 0
+        inverted: false
+        mute: false
+      - channel: 3
+        gain: 0
+        inverted: false
+        mute: false
+
+pipeline:
+  - type: Mixer
+    name: 2to4
+  - channel: 0
+    names:
+      - cx5_hi
+    type: Filter
+  - channel: 1
+    names:
+      - cx5_lo
+      - cx5_lo_gain
+    type: Filter
+  - channel: 2
+    names:
+      - cx5_lo
+      - cx5_lo_gain
+    type: Filter
+  - channel: 3
+    names:
+      - cx5_hi
+    type: Filter
+  - name: 4to2
+    type: Mixer
