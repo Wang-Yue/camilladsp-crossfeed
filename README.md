@@ -36,11 +36,6 @@ We can easily validate the setting being identical to `bs2b` by plotting the Fre
 
 ![Frequency response graph of Jan Meier crossfeed](frequency-response.png)
 
-
-# Extra notes
-
-RME's ADI-2 series does not follow `bs2b` strictly. When plotting the frequency-response graph, its roll off frequency for the high shelf filter is earlier than the official `bs2b`, though the difference is very minor. In addition, the product manual also has the first level parameter documented wrong. This project strictly follows the `bs2b` project and will give exactly the same frequency response as `bs2b`'s.
-
 The above 5 levels already cover what the official `bs2b` project offers as default set of levels:
 
 1. 700 Hz, 4.5 dB - default.
