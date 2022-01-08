@@ -1,7 +1,7 @@
 filters:
   cx1_hi:
     parameters:
-      freq: 933.80 
+      freq: 954.40
       gain: -0.75
       type: Lowshelf
       q: 0.5
@@ -19,7 +19,7 @@ filters:
 
   cx2_hi:
     parameters:
-      freq: 898.64
+      freq: 824.70
       gain: -1.4
       type: Lowshelf
       q: 0.5
@@ -55,7 +55,7 @@ filters:
 
   cx4_hi:
     parameters:
-      freq: 856.55
+      freq: 873.89
       gain: -2.25
       type: Lowshelf
       q: 0.5
@@ -73,7 +73,7 @@ filters:
 
   cx5_hi:
     parameters:
-      freq: 844.32
+      freq: 884.29
       gain: -2.5
       type: Lowshelf
       q: 0.5
