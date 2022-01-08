@@ -1,9 +1,10 @@
 filters:
   cx1_hi:
     parameters:
-      freq: 996.51 
+      freq: 933.80 
       gain: -0.75
-      type: LowshelfFO
+      type: Lowshelf
+      q: 0.5
     type: Biquad
   cx1_lo:
     parameters:
@@ -18,9 +19,10 @@ filters:
 
   cx2_hi:
     parameters:
-      freq: 899.51 
+      freq: 898.64
       gain: -1.4
-      type: LowshelfFO
+      type: Lowshelf
+      q: 0.5
     type: Biquad
   cx2_lo:
     parameters:
@@ -35,9 +37,10 @@ filters:
 
   cx3_hi:
     parameters:
-      freq: 975.00
+      freq: 868.97
       gain: -2
-      type: LowshelfFO
+      type: Lowshelf
+      q: 0.5
     type: Biquad
   cx3_lo:
     parameters:
@@ -52,9 +55,10 @@ filters:
 
   cx4_hi:
     parameters:
-      freq: 994.73
+      freq: 856.55
       gain: -2.25
-      type: LowshelfFO
+      type: Lowshelf
+      q: 0.5
     type: Biquad
   cx4_lo:
     parameters:
@@ -69,9 +73,10 @@ filters:
 
   cx5_hi:
     parameters:
-      freq: 1021.17
+      freq: 844.32
       gain: -2.5
-      type: LowshelfFO
+      type: Lowshelf
+      q: 0.5
     type: Biquad
   cx5_lo:
     parameters:
