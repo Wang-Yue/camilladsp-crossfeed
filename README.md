@@ -36,13 +36,15 @@ We can easily validate the setting being identical to `bs2b` by plotting the Fre
 
 ![Frequency response graph of Jan Meier crossfeed](frequency-response.png)
 
+# Note
+
 The above 5 levels already cover what the official `bs2b` project offers as default set of levels:
 
 1. 700 Hz, 4.5 dB - default.
 2. 700 Hz, 6 dB - most popular.
 3. 650 Hz, 9.5 dB - making the smallest changes in the original signal only for relaxing listening by headphones.
 
-# Note
+# Filter parameters
 
 The parameter values of the filters can be computed using a perl script. 
 The repository has `parameter_computation.pl` which is slightly modified from `bs2b`'s `bs2b-H-transform.pl`.
